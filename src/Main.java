@@ -28,6 +28,10 @@ public class Main {
                     products.replaceProduct();
                     break;
                 }
+                case "5" :{
+                    System.out.println("You finished");
+                    System.exit(0);
+                }
 
             }
         }
@@ -39,5 +43,6 @@ public class Main {
         System.out.println("Enter 2 to remove product");
         System.out.println("Enter 3 to display all products ");
         System.out.println("Enter 4 to replace product");
+        System.out.println("Enter 5 to exit");
     }
 }
