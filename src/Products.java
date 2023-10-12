@@ -8,8 +8,9 @@ public class Products {
     private int width;
     private String type;
 
-    public Products(String name, int length, int weight, int width) {
+    public Products(String name, String type, int length, int weight, int width) {
         this.name = name;
+        this.type = type;
         this.length = length;
         this.weight = weight;
         this.width = width;
@@ -61,13 +62,15 @@ public class Products {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Write name of product ");
         String name = scanner.nextLine();
+        System.out.println("Write type of product");
+        String type = scanner.next();
         System.out.println("Write length of product");
         int length = scanner.nextInt();
         System.out.println("Write weight of product");
         int weight = scanner.nextInt();
         System.out.println("Write width of product");
         int width = scanner.nextInt();
-        Products products = new Products(name, length, weight, width);
+        Products products = new Products(name, type, length, weight, width);
         setProduct.add(products);
         System.out.println("Product " + products.toString() + " has been added");
     }
@@ -94,7 +97,7 @@ public class Products {
                 Products nextProduct = iterator.next();
                 if (nextProduct.getName().equalsIgnoreCase(name) && nextProduct.getType().equalsIgnoreCase(type)) {
                     iterator.remove();
-                    System.out.println("Deputy" + name + type + " has been deleted");
+                    System.out.println("Product " + name + type + " has been deleted");
                 }
             }
         }
@@ -122,18 +125,20 @@ public class Products {
                 Products nextProduct = iterator.next();
                 if (nextProduct.getName().equalsIgnoreCase(name) && nextProduct.getType().equalsIgnoreCase(type)) {
                     iterator.remove();
-                    System.out.println("Deputy" + name + type + " has been deleted");
+                    System.out.println("Product " + name + type + " has been deleted");
                     System.out.println("Write product to add him");
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("Write name of product ");
                     String name2 = scanner.nextLine();
+                    System.out.println("Write type of product");
+                    String type2 = scanner.next();
                     System.out.println("Write length of product");
                     int length = scanner.nextInt();
                     System.out.println("Write weight of product");
                     int weight = scanner.nextInt();
                     System.out.println("Write width of product");
                     int width = scanner.nextInt();
-                    Products products = new Products(name2, length, weight, width);
+                    Products products = new Products(name2, type, length, weight, width);
                     setProduct.add(products);
                     System.out.println("Product " + products.toString() + " has been added");
                 }
@@ -147,6 +152,7 @@ public class Products {
 
         }
     }
+
 }
 
 
